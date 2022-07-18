@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+flex-wrap: wrap;
+}
+.boxes{
+    height: 50px;
+    width: 50px;
+    border: solid black 1px;
+
+}
+.select{
+    background-color: purple;
+}
