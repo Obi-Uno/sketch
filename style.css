@@ -1,13 +1,53 @@
+.header{
+height: 150px;
+border: solid black 1px;
+}
+
+.display_options{
+height: 600px;
+border: solid black 1px;
+display: flex;
+/* justify-content:space-between; */
+flex-direction: row;
+gap: 100px;
+
+}
+
+.options{
+height: 98%;
+width: 10%;
+border: solid black 1px;
+}
+
+.display{
+    height: 100%;
+    width :70%;
+    border: solid black 1px;
+    display: flex;
+flex-wrap: wrap;
+
+}
+
+
+
+
+
+
+
+
 .container{
     display: flex;
 flex-wrap: wrap;
 }
 .boxes{
-    height: 50px;
-    width: 50px;
-    border: solid black 1px;
+    height: 10px;
+    width: 10px;
+    border: dashed black 1px;
 
 }
 .select{
-    background-color: purple;
+    background-color: blue;
+}
+h1{
+text-align: center;
 }

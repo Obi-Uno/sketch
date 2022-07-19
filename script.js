@@ -1,8 +1,35 @@
-const boxes = document.querySelectorAll('.boxes');
+// /!!!!!!!!!!!!!   NOTE :- BOX FILLER FUNCTIONING SHOULD BE AT THE BOTTOM OF THE CODE AS IT REQUIRES THE GRID TO BE ALREADY FORMED !!!!!!!!!!!!///////
+
+
+
+
+
 const all = document;
 let box = document;
 const head =document.querySelector("h1");
 const head2 =document.querySelector("h2");
+
+
+
+
+let total =5500;
+const container= document.querySelector(".display");
+let local ;
+for( let i=0;i<total;i++){
+  local =document.createElement('div');
+  local.className = "boxes";
+  container.appendChild(local);
+}
+const  boxes = document.querySelectorAll('.boxes');
+
+
+
+
+
+
+
+
+
 //make bool ,if mouse is down then true
 //if mouse up aka false then do nothing
 let bool_check =false;
@@ -36,8 +63,8 @@ boxes.forEach(box => {
     }
 
   });
-  
-box.addEventListener('click', function handle(event) {
+
+box.addEventListener('mousedown', function handle(event) {
   
 
   box.classList.add("select"); } );
@@ -50,45 +77,6 @@ box.addEventListener('click', function handle(event) {
 
 
 
+// now we want to work on creating a dynamic grid 
 
-
-
-
-
-
-
-// function above(){
-//   boxes.forEach(box => {
-//     box.addEventListener('mouseleave', function handle(event) {
-  
-//       box.classList.add("select");
-//     } 
-//   );
-
-// } );
-
-
-// }
-
-
-
-
-
-// all.addEventListener('mousedown',above (event));
-// all.removeEventListener('mouseup',above());
-
-
-// all.addEventListener('mouseup',function all(event){
-//   boxes.forEach(box => {
-//     box.addEventListener('mouseleave', function handle(event) {
-      
-      
-//       // console.log( event);
-  
-//       box.setAttribute('style', 'background-color: red;');
-//     });
-
-//   });
-
-// } );
 
