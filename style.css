@@ -17,15 +17,19 @@ gap: 100px;
 height: 98%;
 width: 10%;
 border: solid black 1px;
+/* outline: 1px solid black; */
 }
 
 .display{
-    height: 100%;
-    width :70%;
+    
+    height: 600px;
+    width :1300px;
     border: solid black 1px;
     display: flex;
 flex-wrap: wrap;
-
+padding: 0px;
+margin: 0px;
+overflow: hidden;
 }
 
 
@@ -42,7 +46,8 @@ flex-wrap: wrap;
 .boxes{
     height: 10px;
     width: 10px;
-    border: dashed black 1px;
+    /* border: solid grey 1px; */
+    outline: 1px solid black;
 
 }
 .select{
