@@ -2,7 +2,8 @@
 
 
 
-
+let range = document.getElementById("sizeRange");
+let lastVal=range.value; 
 let color ="black";
 const all = document;
 let box = document;
@@ -24,10 +25,15 @@ btn1.addEventListener('click', (e)=>{
 
 // now we want to work on creating a dynamic grid 
 
-let total =1000;
+let total =range.value;
 
 const container= document.querySelector(".display");
-let width1=container.clientWidth ;
+
+
+function create_grid( total){
+
+  container.innerHTML="";
+  let width1=container.clientWidth ;
 let height1=container.clientHeight ;
 let sq= ((height1+2)*(width1+2))/total;
 let x= Math.sqrt(sq)+0.3 ;
@@ -41,10 +47,44 @@ for( let i=0;i<total;i++){
 
   container.appendChild(local);
 }
-const  boxes = document.querySelectorAll('.boxes');
+
+}
+
+create_grid(total);
+let  boxes = document.querySelectorAll('.boxes');
 
 
 //we can make a grid now preferably from total-> 500-5000
+
+
+// to make a new grid everytime the slider moves
+range.addEventListener('mousemove',(e)=>{
+  if(range.value!=lastVal){
+    lastVal=range.value;
+    create_grid(lastVal);
+ boxes = document.querySelectorAll('.boxes');
+    addTouch();
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -73,6 +113,8 @@ all.addEventListener('mouseup',function fake () {up();});// had to put another f
 
 all.addEventListener('mousedown',function faker() {down(); });
 
+function addTouch(){
+
 
 boxes.forEach(box => {
  
@@ -95,6 +137,8 @@ box.addEventListener('mousedown', function handle(event) {
    
 } );
 
+}
+addTouch();
 /// here ends the functionality for coloring a pixel
 
 
