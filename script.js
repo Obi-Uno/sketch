@@ -3,15 +3,28 @@
 
 
 
-
+let color ="black";
 const all = document;
 let box = document;
+let btn1=document.getElementById("white");
+// testing 
+
+btn1.addEventListener('click', (e)=>{
+  color=btn1.innerText;
+})
+
+
+
+//testing
+
+
 // const head =document.querySelector("h1");
 // const head2 =document.querySelector("h2");
 
 
+// now we want to work on creating a dynamic grid 
 
-let total =5000;
+let total =1000;
 
 const container= document.querySelector(".display");
 let width1=container.clientWidth ;
@@ -31,7 +44,7 @@ for( let i=0;i<total;i++){
 const  boxes = document.querySelectorAll('.boxes');
 
 
-
+//we can make a grid now preferably from total-> 500-5000
 
 
 
@@ -66,7 +79,8 @@ boxes.forEach(box => {
   box.addEventListener('mouseleave', function handle(event) {
     if(bool_check==true){
 
-    box.classList.add("select");
+    // box.classList.add(`${color}`);
+    box.style.backgroundColor =`${color}`;
   
     }
 
@@ -75,7 +89,8 @@ boxes.forEach(box => {
 box.addEventListener('mousedown', function handle(event) {
   
 
-  box.classList.add("select"); } );
+  // box.classList.add(`${color}`); } );
+  box.style.backgroundColor =`${color}`; })
 
    
 } );
@@ -85,6 +100,5 @@ box.addEventListener('mousedown', function handle(event) {
 
 
 
-// now we want to work on creating a dynamic grid 
 
 

@@ -46,13 +46,21 @@ flex-wrap: wrap;
 .boxes{
     height: 10px;
     width: 10px;
-    /* border: solid grey 1px; */
-    outline: 1px solid black;
+    border: solid grey 1px;
+    /* border: 1px solid white; */
 
 }
-.select{
-    background-color: blue;
-}
+
 h1{
 text-align: center;
+}
+.blue{
+    background-color: blue;
+}
+.red{
+    background-color: red;
+
+}
+.black{
+    background-color: black;
 }
