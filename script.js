@@ -6,27 +6,62 @@ let range = document.getElementById("sizeRange");
 let lastVal=range.value; 
 let color ="black";
 const all = document;
-let box = document;
-let btn1=document.getElementById("rainbow");
-let btn2=document.getElementById("input-color");
-let btn3=document.getElementById("black");
+// const box = document;
+const btn1=document.getElementById("rainbow");
+const btn2=document.getElementById("input-color");
+const btn3=document.getElementById("black");
+const reset= document.getElementById("reset");
+const erase=document.getElementById("erase");
+const container= document.querySelector(".display");
+const toggle=document.getElementById("toggle");
 
 
+let grid_check= true;
 // testing 
 
 btn1.addEventListener('click', (e)=>{
   color=btn1.innerText;
+  
   // btn2.value=color;
 
-})
+});
+
 btn2.addEventListener('change', (e)=>{
   color=btn2.value;
-})
+});
+
 btn3.addEventListener('click',(e)=>{
   color=btn3.innerText;
   btn2.value=color;
-})
+});
+reset.addEventListener('click',()=>
+{
+container.innerHTML="";
+create_grid(range.value);
+boxes = document.querySelectorAll('.boxes');
+    addTouch();
+    toggle.innerHTML="Remove grid";
+    grid_check=true;
+});
 
+erase.addEventListener("click",()=>{
+  color="white";
+});
+
+toggle.addEventListener('click',(e)=>{
+  if(grid_check==true){
+    toggle.innerHTML="Add grid";
+  grid_check=false;
+  hideGrid();
+  }
+  else{
+    toggle.innerHTML="Remove grid";
+
+    grid_check =true;
+    showGrid();
+}
+
+});
 //testing
 
 
@@ -38,7 +73,6 @@ btn3.addEventListener('click',(e)=>{
 
 let total =range.value;
 
-const container= document.querySelector(".display");
 
 
 function create_grid( total){
@@ -126,7 +160,11 @@ if(color=="rainbow"){
 
 box.addEventListener('mousedown', function handle(event) {
   
-
+  if(color=="rainbow"){
+    let col=`hsl(${Math.random() * 360}, 100%, 50%)`;
+    box.style.backgroundColor =col;
+  
+  }
   // box.classList.add(`${color}`); } );
   box.style.backgroundColor =`${color}`; })
 
@@ -138,7 +176,17 @@ addTouch();
 /// here ends the functionality for coloring a pixel
 
 
+//functions
+function hideGrid(){
+boxes.forEach(box=>{
+  box.style.border="hidden black 1px";
+});
+};
 
-
-
+function showGrid(){
+  boxes.forEach(box=>{
+    box.style.border="solid grey 1px";
+  });
+  };
+  
 

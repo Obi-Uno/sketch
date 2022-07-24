@@ -18,6 +18,9 @@ height: 98%;
 width: 10%;
 border: solid black 1px;
 /* outline: 1px solid black; */
+display: flex;
+flex-direction: column;
+gap: 30px;
 }
 
 .display{
@@ -49,6 +52,7 @@ flex-wrap: wrap;
     height: 10px;
     width: 10px;
     border: solid grey 1px;
+    box-sizing: border-box;
     /* border: 1px solid white; */
 
 }
