@@ -7,14 +7,25 @@ let lastVal=range.value;
 let color ="black";
 const all = document;
 let box = document;
-let btn1=document.getElementById("white");
+let btn1=document.getElementById("rainbow");
+let btn2=document.getElementById("input-color");
+let btn3=document.getElementById("black");
+
+
 // testing 
 
 btn1.addEventListener('click', (e)=>{
   color=btn1.innerText;
+  // btn2.value=color;
+
 })
-
-
+btn2.addEventListener('change', (e)=>{
+  color=btn2.value;
+})
+btn3.addEventListener('click',(e)=>{
+  color=btn3.innerText;
+  btn2.value=color;
+})
 
 //testing
 
@@ -72,25 +83,6 @@ range.addEventListener('mousemove',(e)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //make bool ,if mouse is down then true
 //if mouse up aka false then do nothing
 let bool_check =false;
@@ -120,7 +112,11 @@ boxes.forEach(box => {
  
   box.addEventListener('mouseleave', function handle(event) {
     if(bool_check==true){
+if(color=="rainbow"){
+  let col=`hsl(${Math.random() * 360}, 100%, 50%)`;
+  box.style.backgroundColor =col;
 
+}
     // box.classList.add(`${color}`);
     box.style.backgroundColor =`${color}`;
   
