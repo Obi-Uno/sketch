@@ -44,8 +44,19 @@ boxes = document.querySelectorAll('.boxes');
     grid_check=true;
 });
 
+let erase_toggle=false;
 erase.addEventListener("click",()=>{
+  if(erase_toggle==false){
   color="white";
+  erase.innerHTML="Draw";
+  erase_toggle=true;
+  }
+  else{
+    color=btn2.value;
+    erase.innerHTML="Erase";
+    erase_toggle=false;
+  }
+
 });
 
 toggle.addEventListener('click',(e)=>{

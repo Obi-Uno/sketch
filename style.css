@@ -1,11 +1,11 @@
 .header{
-height: 100px;
-border: solid black 1px;
+height: 80px;
+/* border: hidden black 1px; */
 }
 
 .display_options{
-height: 600px;
-border: solid black 1px;
+height: 580px;
+/* border: solid black 1px; */
 display: flex;
 justify-content:space-between;
 flex-direction: row;
@@ -42,8 +42,8 @@ p{
 }
 .display{
     
-    height: 600px;
-    width :1300px;
+    height: 100%;
+    width :70%;
     border: solid black 1px;
     display: flex;
 flex-wrap: wrap;
