@@ -98,8 +98,8 @@ let local ;
 for( let i=0;i<total;i++){
   local =document.createElement('div');
   local.className = "boxes";
-  local.style.height=`${x.toFixed(2)}px`;
-  local.style.width=`${x.toFixed(2)}px`;
+  local.style.height=`${x.toFixed(4)}px`;
+  local.style.width=`${x.toFixed(4)}px`;
 
   container.appendChild(local);
 }
